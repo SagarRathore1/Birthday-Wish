@@ -1,130 +1,122 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins",sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
-body{
-  background-color: yellow;
+body {
+  background-color: #fdbf00;
 }
-.card{
-  border: 1px solid white;
+.card {
   width: 640px;
   height: 400px;
   position: absolute;
   margin: auto;
-  right: 0;
   left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
   -webkit-perspective: 1200px;
   perspective: 1200px;
-
-
-
+  transition: 1s;
 }
-
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
 .outside,
-.inside{
-  border: 1px solid black;
+.inside {
   height: 100%;
   width: 50%;
   position: absolute;
-
-
-}
-
-.inside{
   left: 50.1%;
-
 }
-
-.outside{
-
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 3;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
 }
-
-.font,
-.back{
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
   height: 100%;
   width: 100%;
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: rotateX(0deg);
-  background-color: white;
-
-  
 }
-
-.font{
-  background-color: white;
-
+.front {
+  background-color: #ffffff;
 }
-
-.back{
+.back {
   transform: rotateY(180deg);
-  background: linear-gradient(to left #e0e0e0 #ffffff 30%);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
 }
-
-.cake{
+.cake {
   width: 100%;
   position: absolute;
   bottom: 30px;
-
-
 }
-
 .top-layer,
 .middle-layer,
-.bottom-layer{
+.bottom-layer {
   height: 80px;
   width: 240px;
   background-repeat: repeat;
-  background-size:60px 100px;
+  background-size: 60px 100px;
   background-position: 28px 0;
-  background-image: linear-gradient(transparent 50px , #fedbab 50px , #fedbab 50px,
-  transparent 60px),
-  radial-gradient(
-    circle at 30px 5px ,
-    #994c10 30px ,
-    #fcbf29 31px
-  );
+  background-image: linear-gradient(
+      transparent 50px,
+      #fedbab 50px,
+      #fedbab 60px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
   border-radius: 10px 10px 0 0;
   position: relative;
   margin: auto;
 }
-
-.middle-layer{
-  transform:scale(0.85);
+.middle-layer {
+  transform: scale(0.85);
   top: 6px;
-
 }
-
-.top-layer{
+.top-layer {
   transform: scale(0.7);
   top: 26px;
-
-
 }
-
-.candle{
+.candle {
   height: 45px;
   width: 15px;
-  background: repeating-linear-gradient(45deg,
-  #fd3018 0,
-  #fd3018 5px,
-  #ffa89e 5px, 
-  #ffa89e 10px,
+  background: repeating-linear-gradient(
+    45deg,
+    #fd3018 0,
+    #fd3018 5px,
+    #ffa89e 5px,
+    #ffa89e 10px
   );
   position: absolute;
   margin: auto;
-  left:0;
+  left: 0;
   right: 0;
   bottom: 202px;
 }
-
-.candle:before{
+.candle:before {
   content: "";
   position: absolute;
   height: 16px;
@@ -134,9 +126,7 @@ body{
   bottom: 48px;
   transform: rotate(45deg);
   left: -1px;
-
 }
-
 .outside p {
   font-size: 23px;
   text-transform: uppercase;
@@ -144,4 +134,8 @@ body{
   text-align: center;
   letter-spacing: 6px;
   color: #000046;
+}
+.inside h1 {
+  font-size: 120px;
+  line-height: 120px;
 }
