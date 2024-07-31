@@ -141,3 +141,10 @@ body {
 }
 
 
+
+@media only screen and (max-width:375px) {
+  .card{
+    left: 3000px;
+  }
+  
+}
