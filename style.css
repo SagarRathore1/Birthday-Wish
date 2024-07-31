@@ -12,8 +12,8 @@ body {
   height: 400px;
   position: absolute;
   margin: auto;
-  left: 0;
-  right: 0;
+  left: px;
+  right: 30px;
   top: 0;
   bottom: 0;
   -webkit-perspective: 1200px;
@@ -141,10 +141,3 @@ body {
 }
 
 
-
-@media only screen and (max-width:375px) {
-  .card{
-    left: 3000px;
-  }
-  
-}
